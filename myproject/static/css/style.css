@@ -1,0 +1,258 @@
+/* Global Styles */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container (General Layout) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1,
+h2,
+h3 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Flexbox Layout */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Forms */
+input,
+select,
+textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Notifications */
+.notification {
+    padding: 15px;
+    background-color: #f4f4f4;
+    color: #333;
+    border-left: 5px solid #007bff;
+    margin: 20px 0;
+}
+
+.notification.error {
+    border-left-color: #ff4d4d;
+    background-color: #f8d7da;
+}
+
+.notification.success {
+    border-left-color: #28a745;
+    background-color: #d4edda;
+}
+
+.notification.info {
+    border-left-color: #17a2b8;
+    background-color: #d1ecf1;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+
+/* Gallery Page Styles */
+#gallery {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#gallery h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Video Gallery */
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-item {
+    width: 300px;
+    margin: 10px;
+}
+
+video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-item {
+    width: 200px;
+    height: 200px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Error Page Styles */
+#error {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#error h1 {
+    font-size: 2.5em;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+#error p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#error ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#error li {
+    font-size: 1.1em;
+    color: #333;
+}
+
+#error a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#error a:hover {
+    text-decoration: underline;
+}

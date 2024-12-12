@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Gallery - Text-to-Media Generator
+{% endblock %}
+
+{% block content %}
+<section id="gallery">
+    <div class="container">
+        <h1>Your Generated Content</h1>
+
+        <div class="media-gallery">
+            <h2>Videos</h2>
+            {% if videos %}
+            <div class="video-gallery">
+                {% for video in videos %}
+                <div class="video-item">
+                    <video controls>
+                        <source src="{{ url_for('static', filename=video) }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No videos available yet.</p>
+            {% endif %}
+
+            <h2>Images</h2>
+            {% if images %}
+            <div class="image-gallery">
+                {% for image in images %}
+                <div class="image-item">
+                    <img src="{{ url_for('static', filename=image) }}" alt="Generated Image">
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No images available yet.</p>
+            {% endif %}
+        </div>
+
+        <p><a href="{{ url_for('index') }}">Go back to Home</a></p>
+    </div>
+</section>
+{% endblock %}

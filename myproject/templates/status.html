@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Content Status - Text-to-Media Generator
+{% endblock %}
+
+{% block content %}
+<section id="status">
+    <div class="container">
+        <h1>Content Status</h1>
+
+        {% if status == "Generating" %}
+        <p>Your content is currently being generated. This may take a few minutes.</p>
+        <div class="loading-spinner">
+            <img src="{{ url_for('static', filename='images/spinner.gif') }}" alt="Loading...">
+        </div>
+        {% elif status == "Analyzing" %}
+        <p>Your content is being analyzed and optimized for quality. Please be patient.</p>
+        <div class="loading-spinner">
+            <img src="{{ url_for('static', filename='images/spinner.gif') }}" alt="Loading...">
+        </div>
+        {% elif status == "Completed" %}
+        <p>Your content is ready! Visit the <a href="{{ url_for('gallery', user_id=user_id) }}">gallery</a> to view your
+            generated media.</p>
+        {% else %}
+        <p>There was an issue processing your request. Please try again later or contact support.</p>
+        {% endif %}
+
+        <p><a href="{{ url_for('index') }}">Go back to Home</a></p>
+    </div>
+</section>
+{% endblock %}

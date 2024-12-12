@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class=" row justify-content-center">
+        <div class=" col-md-6">
+            <h2 class="text-center">Login to Your Account</h2>
+            <form action="/login" method="POST">
+                {{ form.hidden_tag() }}
+                <!-- Username Input -->
+                <div class="form-group">
+                    <label for="username">{{form.email.label}}</label>
+                    {{form.email}}
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="password">{{form.password.label}}</label>
+                    {{form.password}}
+                </div>
+
+                <!-- Error Message -->
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <p>Don't have an account? <a href="/register">Register here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

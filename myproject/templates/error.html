@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+Error - Text-to-Media Generator
+{% endblock %}
+
+{% block content %}
+<section id="error">
+    <div class="container">
+        <h1>Oops! Something went wrong.</h1>
+
+        <p>We're sorry, but there was an issue processing your request.</p>
+
+        {% if error_message %}
+        <p><strong>Error Details:</strong> {{ error_message }}</p>
+        {% endif %}
+
+        <p>You can try the following:</p>
+        <ul>
+            <li>Check your internet connection.</li>
+            <li>Ensure that the media generation process has completed before accessing the gallery.</li>
+            <li>If the problem persists, please contact our support team.</li>
+        </ul>
+
+        <p><a href="{{ url_for('index') }}">Return to the homepage</a> and try again.</p>
+    </div>
+</section>
+{% endblock %}

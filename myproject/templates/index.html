@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home - Text-to-Media Generator
+{% endblock %}
+
+{% block content %}
+<section id="home">
+    <div class="container">
+        <h1>Welcome to Text-to-Media Generator</h1>
+        <p>Submit your prompt to generate stunning videos and images powered by AI!</p>
+
+        <form action="{{ url_for('index') }}" method="POST" id="prompt-form">
+            <label for="user_id">User ID:</label><br>
+            <input type="text" id="user_id" name="user_id" placeholder="Enter your unique User ID" required><br><br>
+
+            <label for="prompt">Prompt:</label><br>
+            <textarea id="prompt" name="prompt" rows="5" placeholder="Describe your idea..."
+                required></textarea><br><br>
+
+            <button type="submit">Generate Content</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for message in messages %}
+            <p class="flash-message">{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</section>
+{% endblock %}
